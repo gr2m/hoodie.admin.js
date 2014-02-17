@@ -6,7 +6,11 @@
 //
 var hoodieEvents = require('../node_modules/hoodie/src/hoodie/events');
 var hoodiePromises = require('../node_modules/hoodie/src/hoodie/promises');
+var hoodieRequest = require('../node_modules/hoodie/src/hoodie/request');
 var hoodieOpen = require('../node_modules/hoodie/src/hoodie/open');
+
+var hoodieAdminAccount = require('./hoodie.admin/account');
+var hoodieAdminPlugins = require('./hoodie.admin/plugins');
 
 // Constructor
 // -------------
@@ -64,8 +68,17 @@ function HoodieAdmin(baseUrl) {
   // * hoodieAdmin.rejectWith
   hoodieAdmin.extend(hoodiePromises );
 
-  // * hoodie.open
+  // * hoodieAdmin.request
+  hoodieAdmin.extend(hoodieRequest);
+
+  // * hoodieAdmin.open
   hoodieAdmin.extend(hoodieOpen);
+
+  // * hoodieAdmin.account
+  hoodieAdmin.extend(hoodieAdminAccount);
+
+  // * hoodieAdmin.plugins
+  hoodieAdmin.extend(hoodieAdminPlugins);
 
   //
   // loading user extensions

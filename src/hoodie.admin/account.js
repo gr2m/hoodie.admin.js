@@ -17,7 +17,7 @@ function hoodieAccount (hoodieAdmin) {
 
   // username is hardcoded to "admin"
   account.signIn = function signIn(/*password*/) {
-    hoodieAdmin.rejectWith('not yet implemented');
+    return hoodieAdmin.rejectWith('not yet implemented');
   };
 
 
@@ -26,8 +26,10 @@ function hoodieAccount (hoodieAdmin) {
 
   //
   account.signOut = function signOut() {
-    hoodieAdmin.rejectWith('not yet implemented');
+    return hoodieAdmin.rejectWith('not yet implemented');
   };
+
+  hoodieAdmin.account = account;
 }
 
 module.exports = hoodieAccount;

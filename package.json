@@ -22,7 +22,6 @@
   "devDependencies": {
     "browserify": "~2.35.1",
     "expect.js": "~0.2.0",
-    "hoodie": "~0.5.1",
     "graceful-fs": "~2.0.1",
     "grunt": "~0.4.1",
     "grunt-browserify": "~1.2.11",
@@ -49,8 +48,7 @@
     "karma-script-launcher": "~0.1.0",
     "load-grunt-tasks": "~0.2.1",
     "requirejs": "~2.1.10",
-    "sinon": "~1.7.1",
-    "hoodie.js-assets": "git://github.com/gr2m/hoodie.js-assets.git"
+    "sinon": "~1.7.1"
   },
   "scripts": {
     "test": "grunt build --verbose",
@@ -61,6 +59,7 @@
     "fs": false
   },
   "dependencies": {
+    "hoodie": "~0.6.5",
     "extend": "~1.2.1"
   }
 }
