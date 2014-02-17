@@ -4,13 +4,13 @@
 // your friendly library for pocket,
 // the Hoodie Admin UI
 //
-var hoodieEvents = require('../node_modules/hoodie/src/hoodie/events');
-var hoodiePromises = require('../node_modules/hoodie/src/hoodie/promises');
 var hoodieRequest = require('../node_modules/hoodie/src/hoodie/request');
 var hoodieOpen = require('../node_modules/hoodie/src/hoodie/open');
 
 var hoodieAdminAccount = require('./hoodie.admin/account');
 var hoodieAdminPlugins = require('./hoodie.admin/plugins');
+
+var hoodieEvents = require('../node_modules/hoodie/src/lib/events');
 
 // Constructor
 // -------------
@@ -30,10 +30,8 @@ function HoodieAdmin(baseUrl) {
     throw new Error('usage: new HoodieAdmin(url);');
   }
 
-  if (baseUrl) {
-    // remove trailing slashes
-    hoodieAdmin.baseUrl = baseUrl.replace(/\/+$/, '');
-  }
+  // remove trailing slashes
+  hoodieAdmin.baseUrl = baseUrl ? baseUrl.replace(/\/+$/, '') : '';
 
 
   // hoodieAdmin.extend
@@ -58,15 +56,6 @@ function HoodieAdmin(baseUrl) {
   // * hoodieAdmin.unbind
   // * hoodieAdmin.off
   hoodieAdmin.extend(hoodieEvents);
-
-
-  // * hoodieAdmin.defer
-  // * hoodieAdmin.isPromise
-  // * hoodieAdmin.resolve
-  // * hoodieAdmin.reject
-  // * hoodieAdmin.resolveWith
-  // * hoodieAdmin.rejectWith
-  hoodieAdmin.extend(hoodiePromises );
 
   // * hoodieAdmin.request
   hoodieAdmin.extend(hoodieRequest);

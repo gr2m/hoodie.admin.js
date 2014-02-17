@@ -59,7 +59,7 @@
     "fs": false
   },
   "dependencies": {
-    "hoodie": "~0.6.5",
+    "hoodie": "git://github.com/hoodiehq/hoodie.js.git#utils_cleanup",
     "extend": "~1.2.1"
   }
 }

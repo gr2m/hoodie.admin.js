@@ -1,7 +1,10 @@
 // HoodieAdmin Account
 // ===================
 
-var hoodieEvents = require('../../node_modules/hoodie/src/hoodie/events');
+var hoodieEvents = require('../../node_modules/hoodie/src/lib/events');
+var rejectWith = require('../../node_modules/hoodie/src/utils/promise/reject_with');
+
+var ADMIN_USERNAME = 'admin';
 
 function hoodieAccount (hoodieAdmin) {
 
@@ -16,8 +19,18 @@ function hoodieAccount (hoodieAdmin) {
   // ----------------------------------
 
   // username is hardcoded to "admin"
-  account.signIn = function signIn(/*password*/) {
-    return hoodieAdmin.rejectWith('not yet implemented');
+  account.signIn = function signIn(password) {
+    var requestOptions = {
+      data: {
+        name: ADMIN_USERNAME,
+        password: password
+      }
+    };
+    
+    return hoodieAdmin.request('POST', '/_session', requestOptions)
+    .done( function() {
+      account.trigger('signin', ADMIN_USERNAME);
+    });
   };
 
 
@@ -26,7 +39,10 @@ function hoodieAccount (hoodieAdmin) {
 
   //
   account.signOut = function signOut() {
-    return hoodieAdmin.rejectWith('not yet implemented');
+    return hoodieAdmin.request('DELETE', '/_session')
+    .done( function() {
+      return hoodieAdmin.trigger('signout');
+    });
   };
 
   hoodieAdmin.account = account;
