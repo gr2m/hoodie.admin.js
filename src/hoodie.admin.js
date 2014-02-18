@@ -8,7 +8,8 @@ var hoodieRequest = require('hoodie/src/hoodie/request');
 var hoodieOpen = require('hoodie/src/hoodie/open');
 
 var hoodieAdminAccount = require('./hoodie.admin/account');
-var hoodieAdminPlugins = require('./hoodie.admin/plugin');
+var hoodieAdminPlugin = require('./hoodie.admin/plugin');
+var hoodieAdminUser = require('./hoodie.admin/user');
 
 var hoodieEvents = require('hoodie/src/lib/events');
 
@@ -66,8 +67,11 @@ function HoodieAdmin(baseUrl) {
   // * hoodieAdmin.account
   hoodieAdmin.extend(hoodieAdminAccount);
 
-  // * hoodieAdmin.plugins
-  hoodieAdmin.extend(hoodieAdminPlugins);
+  // * hoodieAdmin.plugin
+  hoodieAdmin.extend(hoodieAdminPlugin);
+
+  // * hoodieAdmin.user
+  hoodieAdmin.extend(hoodieAdminUser);
 
   //
   // loading user extensions

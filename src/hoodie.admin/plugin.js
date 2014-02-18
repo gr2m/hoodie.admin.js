@@ -1,5 +1,5 @@
-function hoodieAdminPlugins( hoodieAdmin ) {
+function hoodieAdminPlugin( hoodieAdmin ) {
   hoodieAdmin.plugin = hoodieAdmin.open('plugins');
 }
 
-module.exports = hoodieAdminPlugins;
+module.exports = hoodieAdminPlugin;
