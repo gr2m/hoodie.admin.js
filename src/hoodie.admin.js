@@ -8,7 +8,7 @@ var hoodieRequest = require('hoodie/src/hoodie/request');
 var hoodieOpen = require('hoodie/src/hoodie/open');
 
 var hoodieAdminAccount = require('./hoodie.admin/account');
-var hoodieAdminPlugins = require('./hoodie.admin/plugins');
+var hoodieAdminPlugins = require('./hoodie.admin/plugin');
 
 var hoodieEvents = require('hoodie/src/lib/events');
 
