@@ -1,8 +1,7 @@
 // HoodieAdmin Account
 // ===================
 
-var hoodieEvents = require('../../node_modules/hoodie/src/lib/events');
-var rejectWith = require('../../node_modules/hoodie/src/utils/promise/reject_with');
+var hoodieEvents = require('hoodie/src/lib/events');
 
 var ADMIN_USERNAME = 'admin';
 

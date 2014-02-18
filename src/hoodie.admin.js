@@ -4,13 +4,13 @@
 // your friendly library for pocket,
 // the Hoodie Admin UI
 //
-var hoodieRequest = require('../node_modules/hoodie/src/hoodie/request');
-var hoodieOpen = require('../node_modules/hoodie/src/hoodie/open');
+var hoodieRequest = require('hoodie/src/hoodie/request');
+var hoodieOpen = require('hoodie/src/hoodie/open');
 
 var hoodieAdminAccount = require('./hoodie.admin/account');
 var hoodieAdminPlugins = require('./hoodie.admin/plugins');
 
-var hoodieEvents = require('../node_modules/hoodie/src/lib/events');
+var hoodieEvents = require('hoodie/src/lib/events');
 
 // Constructor
 // -------------
